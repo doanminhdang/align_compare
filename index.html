@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<title>So sanh 2 file van ban de ho tro dich thuat</title>
+<h1>So sanh 2 file van ban de ho tro dich thuat</h1>
+<h2>Cong dung:</h2>
+Chuong trinh nay giup phan tich 2 file van ban de:<br />
+&nbsp;&nbsp;- "align": so sanh va tach noi dung dich thuat thanh tung cap cau. (vi du: so sanh tai lieu goc va tai lieu dich o 2 ngon ngu)<br />
+&nbsp;&nbsp;- "compare": so sanh su tuong dong (trong tung cau) giua 2 phien ban khac nhau cua mot tai lieu. (vi du: de tim su khac biet giua 2 lan xuat ban)<br />
+Chuong trinh se xuat ra file ZIP chua cac file XLS gom: (cot A) cau o file 1, (cot B) cau o file 2, (cot C) chi so tuong dong giua 2 cau.<br />
+<h2>Huong dan:</h2>
+&nbsp;&nbsp;+ Chon 2 file van ban de upload. 2 file nay phai cung dinh dang (cung co ten mo rong la .DOC, .DOCX, .TXT, hoac .PDF).<br />
+&nbsp;&nbsp;+ Chon ngon ngu trong cac file van ban. (mac dinh la de - tieng Duc)<br />
+&nbsp;&nbsp;+ Neu file la PDF: chuong trinh se so sanh tung trang. Hay dien vao chuoi trang de so sanh. (mac dinh la trang 1)<br />
+&nbsp;&nbsp;* Luu y: neu so sanh cung luc qua nhieu trang, se qua thoi gian cho phep xu ly cua trang web. Chuoi xu ly chi nen co toi da 15 trang.<br />
+&nbsp;&nbsp;Chuoi trang trong file 1 va trong file 2 phai co cung so trang.<br />
+<br />
+<form action="../cgi-bin/align_compare_processing.py" method="post" enctype="multipart/form-data">
+IMPORTANT: Do you want to DELETE SOURCE DATA on the server? (the final results will be kept for few weeks on the server anyway)<br />
+<input type="radio" name="delete_data" value="yes" /> (default) Yes, delete my source data after finishing the task
+<input type="radio" name="delete_data" value="no" /> No, leave my data on server for later inspection and debugging
+<br />
+<br />
+File 1 (source document) and language: <input type="file" name="upload1" />
+<select name="language1">
+<option value="de" selected>de</option>
+<option value="en">en</option>
+<option value="fr">fr</option>
+<option value="vi">vi</option>
+</select>
+<br />
+Pages in file 1 to be splitted if it is a PDF, eg. 1-3, 5, 7-8 (default is 1): <input type="text" name="page_series_1" /><br />
+File 2 (target document) and language: <input type="file" name="upload2" />
+<select name="language2">
+<option value="de" selected>de</option>
+<option value="en">en</option>
+<option value="fr">fr</option>
+<option value="vi">vi</option>
+</select>
+<br />
+Pages in file 2 to be splitted if it is a PDF, eg. 4-8, 3 (default is 1): <input type="text" name="page_series_2" /><br />
+
+<input type="submit" value="Submit info"/></form>
+<!-- Run from Linux terminal in the folder containing cgi-bin:
+python3 -m http.server --bind localhost --cgi 8000
+or with Python2:
+python -m CGIHTTPServer 8000 .
+Then access this web page on localhost:8000
+ -->

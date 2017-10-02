@@ -1,0 +1,4 @@
+From:
+http://www.foolabs.com/xpdf/download.html
+Email: derekn@foolabs.com
+win and linux versions are from XPDF 3.03, mac version is from 3.02

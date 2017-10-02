@@ -1,0 +1,9 @@
+New in 2.4:
+- The TMX maker now skips malformed lines
+
+New in 2.3
+- Support for various file formats with Abiword, including .rtf and .odt. If you're not on Windows, you'll need to install Abiword separately; visit http://www.abisource.com/download/index.phtml
+
+New in 2.2
+- Support for .doc input files
+- Filetype and language selection done just once now

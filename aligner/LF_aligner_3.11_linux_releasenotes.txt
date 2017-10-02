@@ -1,0 +1,5 @@
+﻿- The GUI has not been tested on linux and is not enabled by default. To use it, you need to install Tk  and enable the GUI in the setup.
+
+- The alignment of pdf files may fail.
+- If you use review in xls, your changes may not be transferred to the tmx file you generate after the review.
+- If the alignment fails at the autoalignment (hunalign) step, try the other two hunalign binaries shipped with LF Aligner, or, even better, compile hunalign from source yourself. Instructions are available in the source code package in aligner/scripts/hunalign

@@ -1,0 +1,4 @@
+﻿- Windows GUI program for convenient batch alignments (will use command line arguments internally)
+- GUI for the TMX maker
+- 3rd column as note in GUI
+- Mixed filetypes in alignment
