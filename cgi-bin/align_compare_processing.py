@@ -43,7 +43,7 @@ def create_user_dir(base_dir):
     # Create directory
 
     def generate_parent_dir():
-        today = datetime.today()
+        today = datetime.utcnow()
 
         relative_path_dir_year = str(today.year)
         relative_path_dir_month = os.path.join(relative_path_dir_year, str(today.month))
