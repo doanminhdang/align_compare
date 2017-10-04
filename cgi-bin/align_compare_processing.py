@@ -8,10 +8,13 @@ import shutil
 
 cgitb.enable()
 
-os.environ['LD_LIBRARY_PATH']='/home/minhdang/public_html/align_compare/aligner/scripts'  # for web. Additional libraries for hunalign are put there.
+cgi_bin_dir = os.getcwd()
+aligner_scripts_dir = cgi_bin_dir.replace('/cgi-bin', '/align_compare/aligner/scripts')
+os.environ['LD_LIBRARY_PATH'] = aligner_scripts_dir  # for web. Additional libraries for hunalign are put there.
 
+server_name = os.environ["SERVER_NAME"]
 #BASE_URL = 'http://localhost:8000'.rstrip('/')
-BASE_URL = 'http://minhdang.info/align_compare'.rstrip('/')  # for web
+BASE_URL = 'http://'+server_name+'/align_compare'.rstrip('/')  # for web
 TOP_DIR = '../align_compare'.rstrip('/')
 ALIGNER_DIR = 'aligner'
 MODULE_DIR = 'modules'.rstrip('/')
@@ -19,8 +22,7 @@ DATA_DIR = 'data'
 UPLOAD_DIR = 'uploads'.rstrip('/')
 TEMP_RESULT_DIR = 'results'.rstrip('/')
 OUTPUT_DIR = 'downloads'.rstrip('/')
-#ABS_TOP_DIR = '/home/dang/Dropbox/Working/Sach_UBTT_Viet_Duc/Dien_dien_tu/Sosanh_C14'.rstrip('/')
-ABS_TOP_DIR = '/home/minhdang/public_html/align_compare'.rstrip('/')  # for web
+ABS_TOP_DIR = cgi_bin_dir.replace('/cgi-bin', '/align_compare').rstrip('/')
 OUTPUT_FILE = 'results.zip'
 
 # Note: running on localhost:8000, the TOP_DIR is '.', because the current directory
