@@ -8,10 +8,13 @@ import shutil
 
 cgitb.enable()
 
-os.environ['LD_LIBRARY_PATH']='/home/minhdang/public_html/align_compare/aligner/scripts'  # for web. Additional libraries for hunalign are put there.
+cgi_bin_dir = os.getcwd()
+aligner_scripts_dir = cgi_bin_dir.replace('/cgi-bin', '/align_compare/aligner/scripts')
+os.environ['LD_LIBRARY_PATH'] = aligner_scripts_dir  # for web. Additional libraries for hunalign are put there.
 
+server_name = os.environ["SERVER_NAME"]
 #BASE_URL = 'http://localhost:8000'.rstrip('/')
-BASE_URL = 'http://minhdang.info/align_compare'.rstrip('/')  # for web
+BASE_URL = 'http://'+server_name+'/align_compare'.rstrip('/')  # for web
 TOP_DIR = '../align_compare'.rstrip('/')
 ALIGNER_DIR = 'aligner'
 MODULE_DIR = 'modules'.rstrip('/')

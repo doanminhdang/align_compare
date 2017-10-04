@@ -1,11 +1,11 @@
-Program: LF Aligner, version: 3.11, OS: Linux, launched: 2017.10.02_11.47.09
+Program: LF Aligner, version: 3.11, OS: Linux, launched: 2017.10.04_00.23.31
 
 Setup: filetype_def: t; filetype_prompt: n; lang_1_iso_def: de; lang_2_iso_def: de; l1_prompt: n; l2_prompt: n; segmenttext: y; confirm_segmenting: auto; cleanup_def: y; cleanup_prompt: n; review_def: xn; review_prompt: n; create_tmx_def: n; create_tmx_prompt: n; tmx_langcode_1_def: de; tmx_langcode_2_def: de; tmx_langcode_1_prompt: n; tmx_langcode_2_prompt: n; creationdate_prompt: n; creationid_def: DangDoan; creationid_prompt: n; ask_master_TM: y; chopmode: 15000; tmxnote_def: ; tmxnote_prompt: n; pdfmode: y
 
 GUI off
 filetype: t
-Input file 1: v27_p4.docx (/home/minhdang/public_html/align_compare/data/2017/10/2/11-47-8/uploads/v27_p4.docx)
-Input file 2: v30_p4.docx (/home/minhdang/public_html/align_compare/data/2017/10/2/11-47-8/uploads/v30_p4.docx)
+Input file 1: v27_p4.docx (/home/minhdang/public_html/align_compare/data/2017/10/4/5-23-30/uploads/v27_p4.docx)
+Input file 2: v30_p4.docx (/home/minhdang/public_html/align_compare/data/2017/10/4/5-23-30/uploads/v30_p4.docx)
 Input file sizes: 74378 bytes 54780 bytes
 Converting docx file to txt
 Converting docx file to txt
@@ -20,7 +20,7 @@ Auto evaluation of segmentation results is on
 Using segmented file versions
 Hunalign dictionary: de-de.dic
 Using Hunalign in normal mode, (77 is less than 15000)
-Aligned file: 71 segments, 7994 bytes (/home/minhdang/public_html/align_compare/data/2017/10/2/11-47-8/uploads/align_2017.10.02_11.47.09/aligned_de-de.txt)
+Aligned file: 71 segments, 7994 bytes (/home/minhdang/public_html/align_compare/data/2017/10/4/5-23-30/uploads/align_2017.10.04_00.23.31/aligned_de-de.txt)
 Cleanup: y
 Review: xn
 Generated xls with 71 lines
