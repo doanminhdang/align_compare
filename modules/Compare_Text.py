@@ -11,9 +11,9 @@ def compare_text_columns(table, column1Position, column2Position):
         sourceSentence = table[i][column1Position]
         targetSentence = table[i][column2Position]
         # Remove hyphen due to line break in German
-        sourceSentence = re.sub(r'[A-Za-z]\- +(?!und |oder |bzw\. )[a-z]', r'\1\2', sourceSentence)
+        sourceSentence = re.sub(r'([A-Za-z])\- +(?!und |oder |bzw\. )([a-z])', r'\1\2', sourceSentence)
         table[i][column1Position] = sourceSentence
-        targetSentence = re.sub(r'[A-Za-z]\- +(?!und |oder |bzw\. )[a-z]', r'\1\2', targetSentence)
+        targetSentence = re.sub(r'([A-Za-z])\- +(?!und |oder |bzw\. )([a-z])', r'\1\2', targetSentence)
         table[i][column2Position] = targetSentence
         similarity += [difflib.SequenceMatcher(None, sourceSentence, targetSentence).ratio()]
     return table, similarity
