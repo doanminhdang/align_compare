@@ -1,22 +1,31 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<title>So sanh 2 file van ban de ho tro dich thuat</title>
-<h1>So sanh 2 file van ban de ho tro dich thuat</h1>
-<h2>Cong dung:</h2>
-Chuong trinh nay giup phan tich 2 file van ban de:<br />
-&nbsp;&nbsp;- "align": so sanh va tach noi dung dich thuat thanh tung cap cau. (vi du: so sanh tai lieu goc va tai lieu dich o 2 ngon ngu)<br />
-&nbsp;&nbsp;- "compare": so sanh su tuong dong (trong tung cau) giua 2 phien ban khac nhau cua mot tai lieu. (vi du: de tim su khac biet giua 2 lan xuat ban)<br />
-Chuong trinh se xuat ra file ZIP chua cac file XLS gom: (cot A) cau o file 1, (cot B) cau o file 2, (cot C) chi so tuong dong giua 2 cau.<br />
-<h2>Huong dan:</h2>
-&nbsp;&nbsp;+ Chon 2 file van ban de upload. 2 file nay phai cung dinh dang (cung co ten mo rong la .DOC, .DOCX, .TXT, hoac .PDF).<br />
-&nbsp;&nbsp;+ Chon ngon ngu trong cac file van ban. (mac dinh la de - tieng Duc)<br />
-&nbsp;&nbsp;+ Neu file la PDF: chuong trinh se so sanh tung trang. Hay dien vao chuoi trang de so sanh. (mac dinh la trang 1)<br />
-&nbsp;&nbsp;* Luu y: neu so sanh cung luc qua nhieu trang, se qua thoi gian cho phep xu ly cua trang web. Chuoi xu ly chi nen co toi da 15 trang.<br />
-&nbsp;&nbsp;Chuoi trang trong file 1 va trong file 2 phai co cung so trang.<br />
+<html>
+<head>
+        <title>So sánh 2 tập tin văn bản</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<h1>So sánh 2 file văn bản để hỗ trợ dịch thuật</h1>
+<h2>Công dụng:</h2>
+Chương trình này giúp phân tích 2 file văn bản để:<br />
+&nbsp;&nbsp;- "align": so sánh và tách nội dung 2 văn bản thành từng cặp câu. (ví dụ: so sánh tài liệu gốc và tài liệu dịch ở 2 ngôn ngữ)<br />
+&nbsp;&nbsp;- "compare": so sánh sự tương đồng (trong từng câu) giữa 2 phiên bản khác nhau của một tài liệu. (ví dụ: để tìm sự khác biệt giữa 2 lần xuất bản)<br />
+Chương trình sẽ xuất ra file ZIP chứa các file XLS gồm: (cột A) câu ở file 1, (cột B) câu ở file 2, (cột C) chỉ số tương đồng giữa 2 câu.<br />
+<br />
+<font color="#3333ff">Gợi ý: dùng chế độ conditional formatting trong Excel 2010 trở về sau để tô màu cho cột C tương ứng với giá trị tương đồng:</font><br />
+&nbsp;&nbsp;Xem hướng dẫn để <a href="https://www.excel-easy.com/examples/data-bars.html">vẽ "data bar"</a> (<a href="http://tuhocexcel.blogspot.com/2013/09/thanh-du-lieu-data-bars.html">một bản dịch tiếng Việt</a>) cho cột C, với giá trị từ 0 đến 1. Sau đó lưu file ở dạng .XLSX. (trong LibreOffice Calc cũng có chức năng "conditional formatting").<br />
+&nbsp;&nbsp;Các ô biểu thị sự giống nhau giữa từng cặp câu sẽ có dạng: <a href="https://www.excel-easy.com/examples/images/data-bars/data-bars.png">https://www.excel-easy.com/examples/images/data-bars/data-bars.png</a><br />
+
+<h2>Hướng dẫn:</h2>
+&nbsp;&nbsp;+ Chọn 2 file văn bản để upload. 2 file này phải cùng kiểu (cùng có tên mở rộng là .DOC, .DOCX, .TXT, hoặc .PDF).<br />
+&nbsp;&nbsp;+ Chọn ngôn ngữ trong các file văn bản. (mặc định là de - tiếng Đức)<br />
+&nbsp;&nbsp;+ Nếu 2 file là PDF: chương trình sẽ so sánh từng trang. Hãy điền vào chuỗi trang để so sánh. (mặc định là trang 1)<br />
+&nbsp;&nbsp;* Lưu ý: nếu so sánh cùng lúc quá nhiều trang, sẽ quá thời gian cho phép xử lý của trang web. Chuỗi xử lý chỉ nên có tối đa 15 trang.<br />
+&nbsp;&nbsp;Các chuỗi trang trong file 1 và trong file 2 phải có cùng số trang.<br />
 <br />
 <form action="../cgi-bin/align_compare_processing.py" method="post" enctype="multipart/form-data">
-IMPORTANT: Do you want to DELETE SOURCE DATA on the server? (the final results will be kept for few weeks on the server anyway)<br />
-<input type="radio" name="delete_data" value="yes" /> (default) Yes, delete my source data after finishing the task
-<input type="radio" name="delete_data" value="no" /> No, leave my data on server for later inspection and debugging
+IMPORTANT: Bạn có muốn XÓA file tải lên sau khi nó được xử lý xong? (kết quả đầu ra sẽ vẫn được lưu trên trang web này)<br />
+<input type="radio" name="delete_data" value="yes" /> (default) Có, xóa dữ liệu tôi tải lên sau khi đã xử lý xong
+<input type="radio" name="delete_data" value="no" /> Không, dữ liệu tải lên sẽ được lưu lại ở trang web để phục vụ việc debug
 <br />
 <br />
 File 1 (source document) and language: <input type="file" name="upload1" />
@@ -27,7 +36,7 @@ File 1 (source document) and language: <input type="file" name="upload1" />
 <option value="vi">vi</option>
 </select>
 <br />
-Pages in file 1 to be splitted if it is a PDF, eg. 1-3, 5, 7-8 (default is 1): <input type="text" name="page_series_1" /><br />
+Nếu file 1 là PDF, chuỗi các trang sẽ được tách ra để so sánh, chẳng hạn 1-3, 5, 7-8: <input type="text" name="page_series_1" value="1"/><br />
 File 2 (target document) and language: <input type="file" name="upload2" />
 <select name="language2">
 <option value="de" selected>de</option>
@@ -36,7 +45,7 @@ File 2 (target document) and language: <input type="file" name="upload2" />
 <option value="vi">vi</option>
 </select>
 <br />
-Pages in file 2 to be splitted if it is a PDF, eg. 4-8, 3 (default is 1): <input type="text" name="page_series_2" /><br />
+Nếu file 2 là PDF, chuỗi các trang sẽ được tách ra để so sánh, chẳng hạn 4-8, 3: <input type="text" name="page_series_2" value="1"/><br />
 
 <input type="submit" value="Submit info"/></form>
 <!-- Run from Linux terminal in the folder containing cgi-bin:
